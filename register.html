@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="assets/img/memory.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chango&family=Lexend+Exa:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
+    <title>Register</title>
+    <meta
+      name="description"
+      content="Challenge your memory and train your brain with this fun and engaging online memory game. Find matching pairs of images and improve your cognitive skills!"
+    />
+    <meta
+      name="keywords"
+      content="memory game, brain training, cognitive skills, matching game, online game, puzzle game, fun game, free game, card game"
+    />
+    <meta name="author" content="Jesse Galetta" />
+  </head>
+  <body>
+    <div id="loader" class="hide"></div>
+    <header>
+      <h1 class="chango">MEMORY GAME</h1>
+      <h2>Challenge your memory</h2>
+      <h3>Train your brain and have fun with this memory game!</h3>
+    </header>
+    <main>
+      <div id="form-container">
+        <h2>Register</h2>
+        <form id="login-form">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+            <p id="error-username" class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label for="password">New password</label>
+            <input type="password" id="password" name="password" required />
+            <p id="error-password" class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label for="password">Confirm password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+            <p id="error-confirm-password" class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label for="secret-question">Secret question</label>
+            <select id="secret-question" name="secret-question">
+              <option value="" selected disabled hidden>
+                Select one question ...
+              </option>
+            </select>
+            <p id="error-secret-question" class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label for="secret-answer">Secret answer</label>
+            <input
+              type="text"
+              id="secret-answer"
+              name="secret-answer"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required />
+          </div>
+          <div class="input-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="input-group">
+            <label for="birth-date">Birth date</label>
+            <input type="date" id="birth-date" name="birth-date" required />
+            <p id="error-birth-date" class="error-message"></p>
+          </div>
+          <div>
+            <input type="checkbox" id="accept" name="accept" required />
+            <label for="accept" style="color: black"
+              >I agree to the Terms and Privacy Policy.</label
+            >
+          </div>
+          <div id="div-error">
+            <p class="error-message"></p>
+          </div>
+          <div id="buttons">
+            <button type="submit" id="submit" class="button">Save</button>
+            <button class="button" onclick="window.location.href='login.html'">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>© 2025 Jesse Galetta. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/server.js"></script>
+    <script src="assets/js/register.js"></script>
+  </body>
+</html>

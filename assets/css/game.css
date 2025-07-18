@@ -1,0 +1,223 @@
+#memory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 500px;
+  height: 500px;
+  aspect-ratio: 1 / 1; /* Square */
+}
+
+.card-container3 {
+  margin: 10px;
+  flex-basis: calc((100% / 3) - 20px);
+}
+
+.card-container4 {
+  margin: 10px;
+  flex-basis: calc((100% / 4) - 20px);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative; /* For position front and back */
+  transition: transform 0.4s;
+  transform-style: preserve-3d; /* Children in 3d space */
+}
+
+.card-matched {
+  border: solid green 5px;
+  background-color: green;
+  border-radius: 5px;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.front {
+  background-color: lightblue;
+}
+
+.back {
+  transform: rotateY(180deg); /* Too have the back rotated */
+}
+
+.rotate {
+  transform: rotateY(180deg);
+}
+
+#new-game {
+  width: 300px;
+  height: 100px;
+  align-self: center;
+  margin: auto;
+}
+
+#memory img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  #memory {
+    max-width: 90vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .card-container3 {
+    margin: 3px;
+    flex-basis: calc((100% / 3) - 6px);
+    max-width: calc((100% / 3) - 6px);
+  }
+  .card-container4 {
+    margin: 3px;
+    flex-basis: calc((100% / 4) - 6px);
+    max-width: calc((100% / 4) - 6px);
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  #memory {
+    max-width: 500px;
+  }
+
+  .card-container3 {
+    margin: 7px;
+    flex-basis: calc((100% / 3) - 14px);
+    max-width: calc((100% / 3) - 14px);
+  }
+  .card-container4 {
+    margin: 7px;
+    flex-basis: calc((100% / 4) - 14px);
+    max-width: calc((100% / 4) - 14px);
+  }
+}
+
+#score {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.score-elements {
+  text-align: center;
+  flex: 1;
+}
+
+.score-elements p {
+  color: purple;
+  font-weight: bold;
+}
+
+.score-notification-center {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the element */
+  font-size: 2.8em;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0; /* Start invisible for animation */
+  pointer-events: none; /* Don't intercept clicks when invisible */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for appearing and disappearing */
+@keyframes fadeInZoomOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5); /* Start small and transparent */
+  }
+  20%,
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7) translateY(-60px);
+  }
+}
+
+.score-notification-center.show {
+  opacity: 1; /* Needed for the animation to start correctly */
+  animation: fadeInZoomOut 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-light-green {
+  color: lightgreen;
+}
+
+.text-yellow {
+  color: yellow;
+}
+
+body.modal-open {
+  overflow: hidden; /* Prevent body scroll when modal is open */
+}
+
+/* Overlay for the blur effect */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* Safari compability */
+  z-index: 999;
+}
+
+/* The Modal (popup) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the modal */
+  background-color: #ffffff00;
+  padding: 30px;
+  z-index: 1000; /* On top of the overlay */
+  min-width: 300px;
+  text-align: center;
+}
+
+.modal-overlay.active,
+.modal.active {
+  display: block;
+}
+
+#end-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex: 1;
+}
+
+#end-buttons button {
+  padding: 20px;
+}
+
+#best {
+  color: gold;
+  font-size: large;
+}

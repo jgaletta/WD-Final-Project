@@ -1,0 +1,66 @@
+#scores-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: calc(100vh - 150px);
+  max-width: calc(100vw - 20px);
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* iOS */
+}
+
+#score-table {
+  border-collapse: collapse; /* Remove space between cells */
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  text-align: center;
+  max-height: 300px;
+}
+
+#score-table thead {
+  background-color: purple;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#score-table th {
+  padding: 18px 15px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#score-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#score-table tbody tr:nth-child(even) {
+  background-color: rgba(
+    240,
+    240,
+    240,
+    0.95
+  ); /* Alternate color between rows */
+}
+
+#score-table tbody tr:hover {
+  background-color: rgba(220, 235, 255, 0.95);
+}
+
+#score-table td {
+  padding: 15px;
+  color: #555;
+}
+
+#score-table .error-message {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .hide-mobile {
+    display: none;
+  }
+}

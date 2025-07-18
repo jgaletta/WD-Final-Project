@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="assets/img/memory.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chango&family=Lexend+Exa:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/scores.css" />
+    <title>Scores</title>
+    <meta
+      name="description"
+      content="Challenge your memory and train your brain with this fun and engaging online memory game. Find matching pairs of images and improve your cognitive skills!"
+    />
+    <meta
+      name="keywords"
+      content="memory game, brain training, cognitive skills, matching game, online game, puzzle game, fun game, free game, card game"
+    />
+    <meta name="author" content="Jesse Galetta" />
+  </head>
+  <body>
+    <div id="loader" class="hide"></div>
+    <header>
+      <nav class="chango">
+        <ul id="menu">
+          <li id="hamburger">☰</li>
+          <li class="nav-elements nav-show"><a href="game.html">GAME</a></li>
+          <li class="nav-elements nav-show selected">SCORES</li>
+          <li class="nav-elements nav-show">
+            <a href="profile.html" id="profile-username"></a>
+          </li>
+          <li class="nav-elements nav-show">
+            <div>
+              <a href="#" onclick="logout()" id="logout"
+                >LOGOUT
+                <img
+                  src="assets/img/logout.png"
+                  width="25"
+                  height="25"
+                  alt="logout"
+              /></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="scores-container">
+        <table id="score-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Username</th>
+              <th>Score</th>
+              <th class="hide-mobile">Matched</th>
+              <th class="hide-mobile">Combo</th>
+              <th class="hide-mobile">Attempts</th>
+              <th class="hide-mobile">Time left (s)</th>
+            </tr>
+          </thead>
+          <tbody id="score-tableBody"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>© 2025 Jesse Galetta. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/server.js"></script>
+    <script src="assets/js/scores.js"></script>
+  </body>
+</html>

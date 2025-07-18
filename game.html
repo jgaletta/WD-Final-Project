@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="assets/img/memory.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chango&family=Lexend+Exa:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/game.css" />
+    <title>Game</title>
+    <meta
+      name="description"
+      content="Challenge your memory and train your brain with this fun and engaging online memory game. Find matching pairs of images and improve your cognitive skills!"
+    />
+    <meta
+      name="keywords"
+      content="memory game, brain training, cognitive skills, matching game, online game, puzzle game, fun game, free game, card game"
+    />
+    <meta name="author" content="Jesse Galetta" />
+  </head>
+  <body>
+    <div id="loader" class="hide"></div>
+    <header>
+      <nav class="chango">
+        <ul id="menu">
+          <li id="hamburger">☰</li>
+          <li class="nav-elements nav-show selected">GAME</li>
+          <li class="nav-elements nav-show">
+            <a href="scores.html">SCORES</a>
+          </li>
+          <li class="nav-elements nav-show">
+            <a href="profile.html" id="profile-username"></a>
+          </li>
+          <li class="nav-elements nav-show">
+            <div>
+              <a href="#" onclick="logout()" id="logout">
+                LOGOUT
+                <img
+                  src="assets/img/logout.png"
+                  width="25"
+                  height="25"
+                  alt="logout"
+                />
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="messages">
+        <h1 class="chango">Ready?</h1>
+      </div>
+      <div id="score"></div>
+
+      <div id="memory">
+        <button id="new-game" class="button chango click-me">NEW GAME</button>
+      </div>
+      <div id="modal-overlay" class="modal-overlay"></div>
+      <div id="modal" class="modal">
+        <div>
+          <h1 id="final-points" class="chango text-light-green">300</h1>
+          <h2 class="score-elements">points</h2>
+          <p id="rank">Rank: #50 (+10)</p>
+          <p id="best">Your best!</p>
+        </div>
+        <div id="end-buttons">
+          <button
+            id="retry"
+            class="button chango click-me"
+            onclick="hideModal();newGameFunction()"
+          >
+            Retry
+          </button>
+          <button id="exit" class="button chango" onclick="location.reload()">
+            Exit
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>© 2025 Jesse Galetta. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/server.js"></script>
+    <script src="assets/js/game.js"></script>
+  </body>
+</html>

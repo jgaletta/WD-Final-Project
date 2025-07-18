@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="assets/img/memory.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chango&family=Lexend+Exa:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <title>Login</title>
+    <meta
+      name="description"
+      content="Challenge your memory and train your brain with this fun and engaging online memory game. Find matching pairs of images and improve your cognitive skills!"
+    />
+    <meta
+      name="keywords"
+      content="memory game, brain training, cognitive skills, matching game, online game, puzzle game, fun game, free game, card game"
+    />
+    <meta name="author" content="Jesse Galetta" />
+  </head>
+  <body>
+    <div id="loader" class="hide"></div>
+    <header>
+      <h1 class="chango">MEMORY GAME</h1>
+      <h2>Challenge your memory</h2>
+      <h3>Train your brain and have fun with this memory game!</h3>
+    </header>
+    <main>
+      <div id="form-container">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div id="div-error">
+            <p class="error-message"></p>
+          </div>
+          <button type="submit" id="submit" class="button">Login</button>
+          <div id="login-links">
+            <a href="forgot.html" class="links">Forgot Password?</a>
+            <a href="register.html" class="links">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>© 2025 Jesse Galetta. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/server.js"></script>
+    <script src="assets/js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+input.input-invalid {
+  border: red solid 3px;
+}
+
+.input-invalid {
+  border: red solid 3px;
+}
+
+#div-error {
+  text-align: left;
+  margin-top: 20px;
+}

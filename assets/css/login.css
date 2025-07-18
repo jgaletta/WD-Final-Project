@@ -1,0 +1,10 @@
+#submit {
+  margin-top: 10px;
+}
+
+#login-links {
+  margin-top: 20px;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+}
