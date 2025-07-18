@@ -9,5 +9,3 @@ document.addEventListener("DOMContentLoaded", function () {
   const profileLink = document.getElementById("profile-username");
   profileLink.textContent = username.toUpperCase();
 });
-
-/* Controllo utente se esistente in database + scadenza (ES: 1 settimana)  */
